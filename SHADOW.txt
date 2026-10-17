@@ -1,0 +1,6 @@
+shadow prebuilt repo: grpc-grpc (target)
+  upstream: external/grpc-grpc
+  api-level: 34 (branch 34-20261016)
+  blobs: org.blisslabs.ag.ext.grpc.grpc.apex
+  dev-src: extracted extractive payload (libgrpc++.so, libgrpc++_unsecure.so, libgrpc++_common.a, protoc plugins, headers) + root Android.bp
+  date: 2026-10-17

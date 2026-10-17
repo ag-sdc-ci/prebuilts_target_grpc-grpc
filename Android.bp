@@ -1,0 +1,98 @@
+// Auto-generated prebuilt Blueprint for external/grpc-grpc
+// Extracted from Extractive APEX package: org.blisslabs.ag.ext.grpc-grpc
+
+package {
+    default_applicable_licenses: ["external_grpc-grpc_license"],
+}
+
+license {
+    name: "external_grpc-grpc_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-MPL-2.0",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+cc_library_headers {
+    name: "libgrpc++_internal_headers",
+    export_include_dirs: ["include"],
+    visibility: ["//visibility:public"],
+}
+
+cc_prebuilt_library_static {
+    name: "libgrpc++_common",
+    host_supported: true,
+    vendor_available: true,
+    export_include_dirs: ["include"],
+    srcs: ["lib/libgrpc++_common.a"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libgrpc++",
+    vendor_available: true,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+        "libcrypto",
+        "libssl",
+    ],
+    static_libs: [
+        "libabsl",
+        "libregex_re2",
+    ],
+    visibility: ["//visibility:public"],
+    srcs: ["lib/libgrpc++.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libgrpc++_unsecure",
+    vendor_available: true,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+    ],
+    static_libs: [
+        "libabsl",
+        "libregex_re2",
+    ],
+    visibility: ["//visibility:public"],
+    srcs: ["lib/libgrpc++_unsecure.so"],
+}
+
+cc_prebuilt_library_static {
+    name: "libgrpc_plugin_support",
+    host_supported: true,
+    device_supported: false,
+    export_include_dirs: ["include"],
+    srcs: ["lib/libgrpc_plugin_support.a"],
+}
+
+cc_prebuilt_library_static {
+    name: "libgrpc++_reflection",
+    host_supported: true,
+    device_supported: false,
+    export_include_dirs: ["include"],
+    srcs: ["lib/libgrpc++_reflection.a"],
+}
+
+cc_prebuilt_binary {
+    name: "protoc-gen-grpc-cpp-plugin",
+    host_supported: true,
+    device_supported: false,
+    visibility: ["//visibility:public"],
+    srcs: ["bin/protoc-gen-grpc-cpp-plugin"],
+}
+
+cc_prebuilt_binary {
+    name: "protoc-gen-grpc-python-plugin",
+    host_supported: true,
+    device_supported: false,
+    visibility: ["//visibility:public"],
+    srcs: ["bin/protoc-gen-grpc-python-plugin"],
+}
