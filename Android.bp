@@ -36,6 +36,8 @@ cc_prebuilt_library_static {
 cc_prebuilt_library_shared {
     name: "libgrpc++",
     vendor_available: true,
+    host_supported: true,
+    prefer: true,
     export_include_dirs: ["include"],
     shared_libs: [
         "liblog",
@@ -53,6 +55,8 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libgrpc++_unsecure",
     vendor_available: true,
+    host_supported: true,
+    prefer: true,
     export_include_dirs: ["include"],
     shared_libs: [
         "liblog",
